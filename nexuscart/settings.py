@@ -82,6 +82,9 @@ DATABASES = {
         'PASSWORD': '',
         'HOST':'localhost',
         'PORT':'3306',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_TRANS_TABLES',
+        },
     }
 }
 
@@ -122,7 +125,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL='images/'
+MEDIA_ROOT=BASE_DIR/'static'
+
+STATICFILES_DIRS=[
+	BASE_DIR/ 'static',
+]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
